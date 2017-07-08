@@ -19,5 +19,4 @@
 
 </ul>
 
-<span><%= link "Edit", to: ticket_path(@conn, :edit, @ticket) %></span>
 <span><%= link "Back", to: ticket_path(@conn, :index) %></span>
