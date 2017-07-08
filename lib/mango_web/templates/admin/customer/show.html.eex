@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-3">
+    <h1>Customer</h1>
+    <h2><%= @customer.name %></h2>
+    <ul>
+      <li>
+        <strong>Area of Residence:</strong>
+        <%= @customer.residence_area %>
+      </li>
+      <li>
+        <strong>Phone number:</strong>
+        <%= @customer.phone %>
+      </li>
+      <li>
+        <strong>Email:</strong>
+        <%= @customer.email %>
+      </li>
+    </ul>
+  </div>
+</div>

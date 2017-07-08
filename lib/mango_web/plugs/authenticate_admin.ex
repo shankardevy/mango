@@ -2,7 +2,7 @@ defmodule MangoWeb.Plugs.AuthenticateAdmin do
   import Plug.Conn
   import Phoenix.Controller, only: [redirect: 2, put_flash: 3]
 
-  def init(opts), do: nil
+  def init(_opts), do: nil
 
   def call(conn, _opts) do
     case conn.assigns[:current_admin] do
