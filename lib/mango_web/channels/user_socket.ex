@@ -2,27 +2,20 @@ defmodule MangoWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
+<<<<<<< HEAD:lib/mango_web/channels/user_socket.ex
   # channel "room:*", MangoWeb.RoomChannel
+=======
+  channel "pos", Mango.Web.BotChannel
+>>>>>>> e687d85... Setup chat interface and channel:lib/mango/web/channels/user_socket.ex
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
-  # transport :longpoll, Phoenix.Transports.LongPoll
 
-  # Socket params are passed from the client and can
-  # be used to verify and authenticate a user. After
-  # verification, you can put default assigns into
-  # the socket that will be set for all channels, ie
-  #
-  #     {:ok, assign(socket, :user_id, verified_user_id)}
-  #
-  # To deny connection, return `:error`.
-  #
-  # See `Phoenix.Token` documentation for examples in
-  # performing token verification on connect.
   def connect(_params, socket) do
     {:ok, socket}
   end
 
+<<<<<<< HEAD:lib/mango_web/channels/user_socket.ex
   # Socket id's are topics that allow you to identify all sockets for a given user:
   #
   #     def id(socket), do: "user_socket:#{socket.assigns.user_id}"
@@ -33,5 +26,7 @@ defmodule MangoWeb.UserSocket do
   #     MangoWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
+=======
+>>>>>>> e687d85... Setup chat interface and channel:lib/mango/web/channels/user_socket.ex
   def id(_socket), do: nil
 end

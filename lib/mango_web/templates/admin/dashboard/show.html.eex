@@ -1,0 +1,17 @@
+<div class="chat-box">
+  <h3>Mango Robot Assistant</h3>
+  <ul id="pos-chat-room" class="chat">
+    <li>
+      <div class="chat-body">
+        <p id="intro-text">Waiting for connection...</p>
+      </div>
+    </li>
+  </ul>
+  <div class="chat-input input-group">
+    <input id="btn-input" type="text" class="form-control" placeholder="Type your message here...">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" id="btn-chat">
+        Send</button>
+    </span>
+  </div>
+</div>

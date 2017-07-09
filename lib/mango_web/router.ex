@@ -64,6 +64,7 @@ defmodule MangoWeb.Router do
     pipe_through [:browser, :admin, MangoWeb.Plugs.AuthenticateAdmin]
 
     # Add all routes that require admin authentication
+    get "/", DashboardController, :show
     resources "/users", UserController
     resources "/orders", OrderController, only: [:index, :show]
     resources "/customers", CustomerController, only: [:index, :show]
