@@ -1,3 +1,4 @@
+<script>window.userToken = "<%= @token %>";</script>
 <div class="chat-box">
   <h3>Mango Robot Assistant</h3>
   <ul id="pos-chat-room" class="chat">
