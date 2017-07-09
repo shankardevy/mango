@@ -1,0 +1,30 @@
+<h2>Warehouse items</h2>
+<span class="pull-right">
+  <%= link "Add new", to: admin_warehouse_item_path(@conn, :new), class: "btn btn-primary" %>
+</span>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Price</th>
+      <th>Stock quantity</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for warehouse_item <- @warehouse_items do %>
+    <tr>
+      <td><%= warehouse_item.sku %></td>
+      <td><%= warehouse_item.price %></td>
+      <td><%= warehouse_item.stock_quantity %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: admin_warehouse_item_path(@conn, :show, warehouse_item), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: admin_warehouse_item_path(@conn, :edit, warehouse_item), class: "btn btn-default btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

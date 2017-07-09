@@ -1,0 +1,28 @@
+<h2>Show Supplier</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @supplier.name %>
+  </li>
+
+  <li>
+    <strong>Contact person:</strong>
+    <%= @supplier.contact_person %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @supplier.phone %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @supplier.email %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: admin_supplier_path(@conn, :edit, @supplier) %></span>
+<span><%= link "Back", to: admin_supplier_path(@conn, :index) %></span>

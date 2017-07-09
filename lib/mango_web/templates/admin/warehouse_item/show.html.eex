@@ -1,0 +1,23 @@
+<h2>Show Ware house item</h2>
+
+<ul>
+
+  <li>
+    <strong>Sku:</strong>
+    <%= @warehouse_item.sku %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @warehouse_item.price %>
+  </li>
+
+  <li>
+    <strong>Stock quantity:</strong>
+    <%= @warehouse_item.stock_quantity %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: admin_warehouse_item_path(@conn, :edit, @warehouse_item) %></span>
+<span><%= link "Back", to: admin_warehouse_item_path(@conn, :index) %></span>

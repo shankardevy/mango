@@ -19,6 +19,13 @@
             <li><%= link "Customers", to: admin_customer_path(@conn, :index) %></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Warehouse<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link "Warehouse Items", to: admin_warehouse_item_path(@conn, :index) %></li>
+            <li><%= link "Suppliers", to: admin_supplier_path(@conn, :index) %></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link "Logout", to: admin_session_path(@conn, :delete) %></li>

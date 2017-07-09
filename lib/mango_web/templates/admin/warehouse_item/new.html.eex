@@ -1,0 +1,6 @@
+<h2>New Ware house item</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: admin_warehouse_item_path(@conn, :create) %>
+
+<span><%= link "Back", to: admin_warehouse_item_path(@conn, :index) %></span>
