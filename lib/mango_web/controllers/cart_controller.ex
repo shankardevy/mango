@@ -18,4 +18,9 @@ defmodule MangoWeb.CartController do
         |> redirect(to: page_path(conn, :index))
     end
   end
+
+  def show(conn, _params) do
+    cart = conn.assigns.cart
+    render conn, "show.html", cart: cart
+  end
 end
