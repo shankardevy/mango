@@ -1,0 +1,33 @@
+@media  (min-width: 992px) {
+    .chat-box {
+        position: fixed;
+        width: 33.3%;
+        margin-left: -30px;
+        background: rgba(128, 128, 128, 0.08);
+        padding-left: 15px;
+    }
+}
+.chat-input {
+    margin: 15px 10px 10px 0;
+}
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0 10px 0 0;
+    max-height: 250px;
+    overflow-y: scroll;
+    border-bottom: 1px solid gray;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
