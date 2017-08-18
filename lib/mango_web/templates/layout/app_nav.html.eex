@@ -16,6 +16,19 @@
         <li><%= link "Fruits", to: category_path(@conn, :show, "fruits") %></li>
         <li><%= link "Vegetables", to: category_path(@conn, :show, "vegetables") %></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%= if @customer do %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @customer.name %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link "Log Out", to: "/logout" %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link "Register", to: registration_path(@conn, :new), class: "nav-link" %></li>
+          <li><%= link "Sign in", to: session_path(@conn, :new), class: "nav-link" %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
