@@ -8,6 +8,7 @@ defmodule MangoWeb.Plugs.AuthenticateCustomer do
     case conn.assigns[:current_customer] do
       nil ->
          conn
+         |> put_session(:intending_to_visit, conn.request_path)
          |> put_flash(:info, "You must be signed in")
          |> redirect(to: "/login")
          |> halt
