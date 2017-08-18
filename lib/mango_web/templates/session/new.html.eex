@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h1>Mango Customer Login</h1>
+    <%= form_for @conn, session_path(@conn, :create), [as: :session, id: "session-form"], fn f -> %>
+      <div class="form-group">
+        <%= text_input f, :email, placeholder: "Email", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= password_input f, :password, placeholder: "Password", class: "form-control" %>
+      </div>
+      <%= submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
