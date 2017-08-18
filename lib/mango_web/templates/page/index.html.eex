@@ -1,9 +1,8 @@
 <h1 class="page-title">Seasonal Products</h1>
-<div>
+<div class="row">
   <%= for product <- @seasonal_products do %>
-    <div class="product">
-      <div class="product-name"><%= product.name %></div>
-      <div>₹ <span class="product-price"><%= product.price %></span></div>
+    <div class="col-md-4">
+      <%= render MangoWeb.ProductView, "product_card.html", product: product %>
     </div>
   <% end %>
 </div>
