@@ -3,11 +3,12 @@
     <span class="text-muted pull-right"><%= @product.pack_size %></span>
     <h2>
       <div class="product-name"><%= @product.name %></div>
-      <span class="pull-right">
-        ₹ <small class="product-price"><%= @product.price %></small>
+      <span class="pull-right">₹
+        <small class="product-price"><%= @product.price %></small>
       </span>
     </h2>
     <hr/>
+    <%= render "cart_form.html", product: @product, conn: @conn  %>
   </div>
   <img src="<%= @product.image %>" />
 </div>
