@@ -32,4 +32,8 @@ defmodule Mango.Sales do
     |> Order.changeset(attrs)
     |> Repo.update
   end
+
+  def change_cart(%Order{} = order) do
+    Order.changeset(order, %{})
+  end
 end
