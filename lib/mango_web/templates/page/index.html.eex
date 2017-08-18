@@ -1,1 +1,9 @@
-<h1>Seasonal products</h1>
+<h1 class="page-title">Seasonal Products</h1>
+<div>
+  <%= for product <- @seasonal_products do %>
+    <div class="product">
+      <div class="product-name"><%= product.name %></div>
+      <div>₹ <span class="product-price"><%= product.price %></span></div>
+    </div>
+  <% end %>
+</div>
