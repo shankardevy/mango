@@ -1,1 +1,118 @@
-/* This file is for your main application css. */
+.h1, h1 {
+  font-size: 28px;
+  color: #ec5d57;
+}
+
+.h2, h2 {
+  font-size: 22px;
+  color: #504f4f;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.cart-qty {
+  width: 75px;
+}
+
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border: none;
+    box-shadow: 1px 1px 4px 0px #ababab;
+}
+.navbar-default {
+  background-color: white;
+}
+
+.navbar-brand > img{
+  width: 25px;
+  display: inline;
+}
+
+.navbar-default .navbar-nav > li > .link {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: block;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: #ec5d57;
+}
+.dropdown-menu > li > .link {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+
+.navbar-default .navbar-nav>li> .cart {
+  color: white;
+  background: rgb(82, 82, 82);
+}
+
+.navbar-default .navbar-nav>li> .cart:focus,
+.navbar-default .navbar-nav>li> .cart:hover {
+  color: white;
+  background-color: rgb(58, 57, 57);
+}
+
+.recipe .media {
+  width: 80%;
+  margin-bottom: 5rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #ec5d57;
+  border-color: #d4544e;
+}
+
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:hover {
+  color: #fff;
+  background-color: #d4544e;
+  border-color: #d4544e;
+}
+
+.btn-info
+{
+    color: #fbfbfb;
+    background-color: #a7423e;
+    border-color: #a7423e;
+}
+
+.btn-info.focus,
+.btn-info:focus,
+.btn-info:hover {
+  color: #fff;
+  background-color: #a7423e;
+  border-color: #a7423e;
+}
+
+.alert-info{
+  color: #fff;
+  background-color: #ec5d57;
+  border-color: #d4544e;
+}
+
+.price {
+  color: #ec5d57;
+}
+
+.admin-login {
+  margin-top: 16rem;
+}
