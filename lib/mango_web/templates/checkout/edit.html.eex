@@ -1,1 +1,43 @@
-<h1>Checkout</h1>
+<%= form_for @order_changeset, checkout_path(@conn, :update), fn f -> %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Order Summary</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product name</th>
+          <th>Pack size</th>
+          <th class="text-right">Quantity</th>
+          <th class="text-right">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+      <%= for {item, i} <- Enum.with_index(@order.line_items, 1) do %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= item.product_name %></td>
+          <td><%= item.pack_size %></td>
+          <td class="text-right"><%= item.quantity %></td>
+          <td class="text-right">₹ <%= item.total %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td colspan=4 class="text-right">Total</td>
+        <td class="text-right">₹ <%= @order.total %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="form-group">
+      <%= label f, :comments, class: "control-label" %>
+      <%= textarea f, :comments, class: "form-control" %>
+      <%= error_tag f, :comments %>
+    </div>
+
+    <div class="form-group float-right">
+      <%= submit "Confirm", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<% end %>
