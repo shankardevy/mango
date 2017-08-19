@@ -54,10 +54,17 @@ defmodule MangoWeb.Router do
   scope "/admin", MangoWeb.Admin, as: :admin do
     pipe_through [:browser, :admin]
 
-    resources "/users", UserController
+    # Add all routes that don't require admin authentication
     get "/login", SessionController, :new
     post "/sendlink", SessionController, :send_link
     get "/magiclink", SessionController, :create
+  end
+
+  scope "/admin", MangoWeb.Admin, as: :admin do
+    pipe_through [:browser, :admin, MangoWeb.Plugs.AuthenticateAdmin]
+
+    # Add all routes that require admin authentication
+    resources "/users", UserController
   end
 
 end
