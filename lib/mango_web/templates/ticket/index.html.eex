@@ -1,0 +1,30 @@
+<h2>Listing Tickets</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Status</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for ticket <- @tickets do %>
+    <tr>
+      <td><%= ticket.subject %></td>
+      <td><%= ticket.message %></td>
+      <td><%= ticket.status %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: ticket_path(@conn, :show, ticket), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: ticket_path(@conn, :edit, ticket), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: ticket_path(@conn, :delete, ticket), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Ticket", to: ticket_path(@conn, :new) %></span>

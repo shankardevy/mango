@@ -1,0 +1,6 @@
+<h2>Edit Ticket</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: ticket_path(@conn, :update, @ticket) %>
+
+<span><%= link "Back", to: ticket_path(@conn, :index) %></span>
