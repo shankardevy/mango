@@ -2,6 +2,8 @@ defmodule Mango.Catalog do
   alias Mango.Catalog.Product
   alias Mango.Repo
 
+  def get_product!(id), do: Product |> Repo.get!(id)
+
   def list_products do
     Product
     |> Repo.all
