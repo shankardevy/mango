@@ -1,0 +1,28 @@
+<h1>Customers</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Community</th>
+      <th>Phone number</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for customer <- @customers do %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.residence_area %></td>
+      <td><%= customer.phone %></td>
+      <td><%= customer.email %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: admin_customer_path(@conn, :show, customer), class: "btn btn-default btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

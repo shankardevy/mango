@@ -1,0 +1,31 @@
+<h2>Order #<%= @order.id %></h2>
+
+<div class="row">
+  <div class="col-md-9">
+    <h3>Ordered Products</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product name</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+    <%= for {item, i} <- Enum.with_index(@order.line_items, 1) do %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= item.product_name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.total %></td>
+      </tr>
+    <% end %>
+      <tr>
+        <td colspan=3>Total</td>
+        <td><%= @order.total %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

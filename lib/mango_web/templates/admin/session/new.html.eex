@@ -1,0 +1,8 @@
+<div class="admin-login col-md-4 col-md-offset-4">
+  <%= form_for @conn, admin_session_path(@conn, :send_link), [as: :session], fn f -> %>
+    <div class="form-group">
+      <%= text_input f, :email, placeholder: "Email", class: "form-control" %>
+    </div>
+    <%= submit "Send login link", class: "btn btn-primary pull-right" %>
+  <% end %>
+</div>
