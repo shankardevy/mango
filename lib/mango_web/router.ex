@@ -17,6 +17,7 @@ defmodule MangoWeb.Router do
 
   pipeline :admin do
     plug MangoWeb.Plugs.AdminLayout
+    plug MangoWeb.Plugs.LoadAdmin
   end
 
   pipeline :api do
