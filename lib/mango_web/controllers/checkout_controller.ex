@@ -14,7 +14,9 @@ defmodule MangoWeb.CheckoutController do
     order = conn.assigns.cart
     order_params = associate_user_from_session(conn, order_params)
     case Sales.confirm_order(order, order_params) do
-      {:ok, _} ->
+      {:ok, order} ->
+        message = "New Order ##{order.id} from #{order.customer_name}"
+        MangoWeb.Endpoint.broadcast! "pos", "message:new", %{message: message}
         conn
         |> put_flash(:info, "Your order has been confirmed.")
         |> redirect(to: "/")
