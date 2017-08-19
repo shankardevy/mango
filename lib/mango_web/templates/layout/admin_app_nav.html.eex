@@ -13,6 +13,9 @@
       <ul class="nav navbar-nav">
         <li><%= link "Admin Users", to: admin_user_path(@conn, :index) %></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link "Logout", to: admin_session_path(@conn, :delete) %></li>
+      </ul>
     </div>
   </div>
 </nav>

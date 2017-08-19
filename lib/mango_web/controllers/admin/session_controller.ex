@@ -40,6 +40,12 @@ defmodule MangoWeb.Admin.SessionController do
       end
    end
 
+   def delete(conn, _) do
+    clear_session(conn)
+    |> put_flash(:info, "You have been logged out")
+    |> redirect(to: admin_user_path(conn, :index))
+   end
+
    @max_age 600 # 10 mins
    defp verify_token(token) do
      Phoenix.Token.verify(MangoWeb.Endpoint, "user", token, max_age: @max_age)
