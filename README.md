@@ -1,20 +1,33 @@
 # Mango
 
-To start your Phoenix server:
+This project contains the source code of the Ecommerce site that is built in the book _Mastering Phoenix Framework_,
+as part of the _Phoenix Inside Out_ series.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+## Additional files
+You need some static image files and CSV files to get the same output as described in the book. These files can be downloaded here:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+https://shankardevy.com/phoenix-book/book_files.zip
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+## Branches and Commits
 
-## Learn more
+Code for each chapter are in their respective branches named after the chapter number.
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+Master branch contains code from all branches merged.
+
+## Setup
+
+Steps to follow to run the code in your local machine:
+
+```
+git clone https://github.com/shankardevy/mango.git
+cd mango
+
+# optionally checkout to the chapter{n} using `git checkout chapter{n}``
+
+mix deps.get
+cd assets && npm install && cd ..
+mix ecto.setup
+mix phx.server
+```
+
+Now visit http://localhost:4000 to see the site.
