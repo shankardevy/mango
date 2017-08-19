@@ -8,6 +8,10 @@ defmodule Mango.Administration do
 
   alias Mango.Administration.User
 
+  def get_admin_by_email(email) do
+    User |> Repo.get_by(email: email)
+  end
+  
   @doc """
   Returns the list of users.
 
