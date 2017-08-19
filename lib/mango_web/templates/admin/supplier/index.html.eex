@@ -1,0 +1,32 @@
+<h2>Suppliers</h2>
+<span class="pull-right">
+  <%= link "Add new", to: admin_supplier_path(@conn, :new), class: "btn btn-primary" %>
+</span>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact person</th>
+      <th>Phone</th>
+      <th>Email</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for supplier <- @suppliers do %>
+    <tr>
+      <td><%= supplier.name %></td>
+      <td><%= supplier.contact_person %></td>
+      <td><%= supplier.phone %></td>
+      <td><%= supplier.email %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: admin_supplier_path(@conn, :show, supplier), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: admin_supplier_path(@conn, :edit, supplier), class: "btn btn-default btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

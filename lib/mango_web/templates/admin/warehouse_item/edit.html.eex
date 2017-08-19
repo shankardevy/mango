@@ -1,0 +1,12 @@
+<h2>Edit Ware house item</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: admin_warehouse_item_path(@conn, :update, @warehouse_item) %>
+
+<span class="pull-right">
+  <%= link "Delete",
+       to: admin_warehouse_item_path(@conn, :delete, @warehouse_item),
+       method: :delete,
+       data: [confirm: "Are you sure?"],
+       class: "btn btn-danger" %>
+</span>

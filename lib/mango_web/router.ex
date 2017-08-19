@@ -67,6 +67,8 @@ defmodule MangoWeb.Router do
     resources "/users", UserController
     resources "/orders", OrderController, only: [:index, :show]
     resources "/customers", CustomerController, only: [:index, :show]
+    resources "/warehouse_items", WarehouseItemController
+    resources "/suppliers", SupplierController
     get "/logout", SessionController, :delete
   end
 

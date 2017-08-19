@@ -1,0 +1,12 @@
+<h2>Edit Supplier</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: admin_supplier_path(@conn, :update, @supplier) %>
+
+<span class="pull-right">
+  <%= link "Delete",
+       to: admin_supplier_path(@conn, :delete, @supplier),
+       method: :delete,
+       data: [confirm: "Are you sure?"],
+       class: "btn btn-danger" %>
+</span>

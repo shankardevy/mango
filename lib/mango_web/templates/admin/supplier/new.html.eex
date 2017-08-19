@@ -1,0 +1,6 @@
+<h2>New Supplier</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: admin_supplier_path(@conn, :create) %>
+
+<span><%= link "Back", to: admin_supplier_path(@conn, :index) %></span>
