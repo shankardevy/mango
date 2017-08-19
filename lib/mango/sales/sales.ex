@@ -46,6 +46,13 @@ defmodule Mango.Sales do
     |> Repo.update()
   end
 
+  def pos_sale_complete(%Order{} = order) do
+    attrs = Map.put(%{}, "status", "POS Sale")
+    order
+    |> Order.changeset(attrs)
+    |> Repo.update()
+  end
+
   def list_orders do
     Order
     |> where([o], o.status != "In Cart")
