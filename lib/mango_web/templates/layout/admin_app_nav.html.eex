@@ -11,6 +11,7 @@
     </div>
     <div class="collapse navbar-collapse" id="admin-nav">
       <ul class="nav navbar-nav">
+        <li><%= link "Sales", to: admin_order_path(@conn, :index) %></li>
         <li><%= link "Admin Users", to: admin_user_path(@conn, :index) %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

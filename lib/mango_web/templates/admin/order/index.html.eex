@@ -1,0 +1,32 @@
+<h2>Orders</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer</th>
+      <th>Residence Area</th>
+      <th>Order status</th>
+      <th>Total</th>
+      <th>Comments</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for order <- @orders do %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.customer_name %></td>
+      <td><%= order.residence_area %></td>
+      <td><%= order.status %></td>
+      <td><%= order.total %></td>
+      <td><%= order.comments %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: admin_order_path(@conn, :show, order), class: "btn btn-default btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

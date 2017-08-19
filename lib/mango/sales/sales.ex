@@ -1,4 +1,6 @@
 defmodule Mango.Sales do
+  import Ecto.Query
+
   alias Mango.Repo
   alias Mango.Sales.Order
 
@@ -42,5 +44,13 @@ defmodule Mango.Sales do
     order
     |> Order.checkout_changeset(attrs)
     |> Repo.update()
-  end  
+  end
+
+  def list_orders do
+    Order
+    |> where([o], o.status != "In Cart")
+    |> Repo.all
+  end
+
+  def get_order!(id), do: Repo.get!(Order, id)
 end
