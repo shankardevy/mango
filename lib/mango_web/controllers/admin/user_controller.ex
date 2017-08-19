@@ -5,7 +5,9 @@ defmodule MangoWeb.Admin.UserController do
 
   def index(conn, _params) do
     users = Administration.list_users()
-    render(conn, "index.html", users: users)
+    conn
+    |> put_layout("admin_app.html")
+    |> render("index.html", users: users)
   end
 
   def new(conn, _params) do
