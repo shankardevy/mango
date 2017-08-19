@@ -1,4 +1,4 @@
-<h1 class="page-title">Seasonal Products</h1>
+<h1 class="page-title"><%= gettext "Seasonal Products" %></h1>
 <div class="row">
   <%= for product <- @seasonal_products do %>
     <div class="col-md-4">
