@@ -42,8 +42,9 @@ defmodule MangoWeb.Acceptance.CartTest do
     find_within_element(product, :tag, "button")
     |> click
 
-    message = find_element(:css, ".alert-success")
-              |> visible_text()
-    assert message =~ "Product added to cart - #{product_name}(#{pack_size}) x 2 qty"
+
+    message = "Product added to cart - #{product_name}(#{pack_size}) x 2 qty"
+    assert(String.contains? visible_page_text(), message)
+
   end
 end
