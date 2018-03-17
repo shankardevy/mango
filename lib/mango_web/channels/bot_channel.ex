@@ -2,7 +2,7 @@ defmodule MangoWeb.BotChannel do
   use MangoWeb, :channel
   alias Mango.Sales
 
-  def join("pos", payload, socket) do
+  def join("pos", _payload, socket) do
     welcome_text = "Hello! Welcome to Mango Point of Sale"
     {:ok, %{message: welcome_text}, socket}
   end
@@ -24,36 +24,39 @@ defmodule MangoWeb.BotChannel do
 
   def handle_in("add", payload, socket) do
     item = String.split(payload["message"], " ")
-    reply = case [socket.assigns[:order], item] do
-      [nil, _] ->
-        %{ message: "Please create a new order before proceeding." }
-      [order, [product_id, quantity]] ->
-        {:ok, order} = Sales.add_to_cart(order, %{"product_id" => product_id, "quantity" => quantity})
-        socket = socket |> assign(:order, order)
-        %{ message: "Product added to order." }
-      _ ->
-        %{ message: "Error" }
-    end
-
+    order = socket.assigns[:order]
+    {reply, socket} = update_order(socket, order, item)
     {:reply, {:ok, reply}, socket}
   end
 
   def handle_in("complete", _, socket) do
-    reply = case socket.assigns[:order] do
-      nil ->
-        %{ message: "Please create a new order before proceeding." }
-      order ->
-        Sales.pos_sale_complete(order)
-        socket = socket |> assign(:order, nil)
-        %{ message: "Sale complete. Order total is INR #{order.total}" }
-    end
-
+    order = socket.assigns[:order]
+    {reply, socket} = complete_order(socket, order)
     {:reply, {:ok, reply}, socket}
   end
 
-  def handle_in(_, payload, socket) do
+  def handle_in(_, _payload, socket) do
     reply = %{ message: "I don't understand your question." }
     {:reply, {:error, reply}, socket}
   end
 
+  defp complete_order(socket, nil) do
+    {%{ message: "Please create a new order before proceeding." }, socket}
+  end
+
+  defp complete_order(socket, order) do
+    Sales.pos_sale_complete(order)
+    socket = socket |> assign(:order, nil)
+    {%{ message: "Sale complete. Order total is INR #{order.total}" }, socket}
+  end
+
+  defp update_order(socket, nil, _) do
+    {%{ message: "Please create a new order before proceeding." }, socket}
+  end
+
+  defp update_order(socket, order, [product_id, quantity]) do
+    {:ok, order} = Sales.add_to_cart(order, %{"product_id" => product_id, "quantity" => quantity})
+    socket = socket |> assign(:order, order)
+    {%{ message: "Product added to order." }, socket}
+  end
 end
