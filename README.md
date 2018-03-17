@@ -29,5 +29,20 @@ cd assets && npm install && cd ..
 mix ecto.setup
 mix phx.server
 ```
-
 Now visit http://localhost:4000 to see the site.
+
+
+## Run Test
+
+Test code requires a running instance of Phantomjs for the Acceptance tests. Run the following command on one of the terminal windows
+
+```
+phantomjs --wd
+```
+
+and in another terminal window, run the test
+
+```
+mix test
+```
+
