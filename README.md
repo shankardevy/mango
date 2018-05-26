@@ -1,7 +1,7 @@
 # Mango
 
 This project contains the source code of the Ecommerce site that is built in the book _Mastering Phoenix Framework_,
-as part of the _Phoenix Inside Out_ series.
+as part of the _Phoenix Inside Out_ series. View the demo at https://mango.shankardevy.com/
 
 ## Additional files
 You need some static image files and CSV files to get the same output as described in the book. These files can be downloaded here:
