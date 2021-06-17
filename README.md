@@ -24,9 +24,7 @@ cd mango
 
 # optionally checkout to the chapter{n} using `git checkout chapter{n}``
 
-mix deps.get
-cd assets && npm install && cd ..
-mix ecto.setup
+mix setup
 mix phx.server
 ```
 Now visit http://localhost:4000 to see the site.
